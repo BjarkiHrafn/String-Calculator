@@ -10,6 +10,7 @@ public class StringCalculatorTest {
 		assertEquals(1, Test.add("1"));
 		assertEquals(12, Test.add("2,5,5"));
 		assertEquals(42, Test.add("2,-43,73,-2,5,7"));
+		assertNotEquals(100, Test.add("3,4,5,6,3"));
     }
 	
 }
