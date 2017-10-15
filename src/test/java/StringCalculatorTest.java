@@ -10,7 +10,6 @@ public class StringCalculatorTest {
 		assertEquals(1, Test.add("1"));
 		assertEquals(12, Test.add("2,5,5"));
 
-		assertNotEquals(100, Test.add("3,4,5,6,3"));
 		//assertEquals(100, Test.add("3,4,5,6,y,3"));
 		assertEquals(6, Test.add("1\n2,3"));
     }
@@ -19,12 +18,12 @@ public class StringCalculatorTest {
         RuntimeException exception = null;
 
         try {
-            Test.add("3,-6,15,-18,46,33");
+            Test.add("3,-6,15,-9,46,-98,33");
         } catch (RuntimeException e) {
             exception = e;
         }
             assertNotNull(exception);
-           // assertEquals("Negatives not allowed: [-6,-15,-18]", exception.getMessage());
+            assertEquals("Negatives not allowed: -6,-9,-98,", exception.getMessage());
     }
 
     @Test public void tooBig(){
